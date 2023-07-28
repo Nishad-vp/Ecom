@@ -1,0 +1,22 @@
+body{
+    z-index: 1;
+    background: #f8f9fd;
+  }
+
+.form-group .g a {
+    color: white;
+}
+g:hover{
+    color: white;
+}
+.float-right a:hover{
+    color: black;
+}
+.card-title{
+    text-align: center;
+}
+.btn1{
+    font-size: 18px;
+    font-weight: bold;
+}
+
