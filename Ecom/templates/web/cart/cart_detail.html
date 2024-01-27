@@ -1,0 +1,380 @@
+{% load static %}
+{% load cart_tag %}
+<!doctype html>
+<html class="no-js" lang="en">
+
+    <head>
+        <!-- meta data -->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+        <!--font-family-->
+		<link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+        
+        <!-- title of site -->
+        <title>Furniture</title>
+
+        <!-- For favicon png -->
+		<link rel="shortcut icon" type="image/icon" href="{% static 'web/logo/favicon.png' %}"/>
+       
+        <!--font-awesome.min.css-->
+        <link rel="stylesheet" href="{% static 'web/css/font-awesome.min.css' %}">
+
+        <!--linear icon css-->
+		<link rel="stylesheet" href="{% static 'web/css/linearicons.css' %}">
+
+		<!--animate.css-->
+        <link rel="stylesheet" href="{% static 'web/css/animate.css' %}">
+
+        <!--owl.carousel.css-->
+        <link rel="stylesheet" href="{% static 'web/css/owl.carousel.min.css' %}">
+		<link rel="stylesheet" href="{% static 'web/css/owl.theme.default.min.css' %}">
+		
+        <!--bootstrap.min.css-->
+        <link rel="stylesheet" href="{% static 'web/css/bootstrap.min.css' %}">
+		
+		<!-- bootsnav -->
+		<link rel="stylesheet" href="{% static 'web/css/bootsnav.css' %}" >	
+        
+        <!--style.css-->
+        <link rel="stylesheet" href="{% static 'web/css/style.css' %}">
+        
+        <!--responsive.css-->
+        <link rel="stylesheet" href="{% static 'web/css/responsive.css' %}">
+
+        <link rel="stylesheet" href="{% static 'web/css/style1.css' %}">
+        
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		
+        <!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+			<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+    </head>
+	
+	<body>
+
+		<!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
+
+        <div class="top-area">
+            <div class="header-area">
+                <!-- Start Navigation -->
+                <nav class="navbar navbar-default bootsnav  navbar-sticky navbar-scrollspy"  data-minus-value-desktop="70" data-minus-value-mobile="55" data-speed="1000">
+
+                    <!-- Start Top Search -->
+                    <div class="top-search">
+                        <div class="container">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-search"></i></span>
+                                <input type="text" class="form-control" placeholder="Search">
+                                <span class="input-group-addon close-search"><i class="fa fa-times"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Top Search -->
+
+                    <div class="container">            
+                        <!-- Start Atribute Navigation -->
+                        <div class="attr-nav">
+                            <ul>
+                                <li class="search">
+                                    <a href="#"><span class="lnr lnr-magnifier"></span></a>
+                                </li><!--/.search-->
+                                <li class="nav-setting">
+                                    <a href="#"><span class="lnr lnr-cog"></span></a>
+                                </li><!--/.search-->
+                                <!--
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" >
+                                        <span class="lnr lnr-cart"></span>
+                                        <span class="badge badge-bg-1">2</span>
+                                    </a>
+                                    <ul class="dropdown-menu cart-list s-cate">
+                                        <li class="single-cart-list">
+                                            <a href="#" class="photo"><img src="assets/images/collection/arrivals1.png" class="cart-thumb" alt="image" /></a>
+                                            <div class="cart-list-txt">
+                                                <h6><a href="#">arm <br> chair</a></h6>
+                                                <p>1 x - <span class="price">$180.00</span></p>
+                                            </div><!--/.cart-list-txt-->
+                                        <!--   <div class="cart-close">
+                                                <span class="lnr lnr-cross"></span>
+                                            </div><!--/.cart-close-->
+                                        </li><!--/.single-cart-list -->
+                                      <!--
+                                   
+                                        <li class="total">
+                                            <span>Total: $0.00</span>
+                                            <button class="btn-cart pull-right" onclick="window.location.href='#'">view cart</button>
+                                        </li>
+                                    </ul>
+                                </li><!--/.dropdown-->
+                            </ul>
+                        </div><!--/.attr-nav-->
+                        <!-- End Atribute Navigation -->
+
+                        <!-- Start Header Navigation -->
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <a class="navbar-brand" href="index.html">Interior<span>Craft</span>.</a>
+
+                        </div><!--/.navbar-header-->
+                        <!-- End Header Navigation -->
+
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse menu-ui-design" id="navbar-menu">
+                            <ul class="nav navbar-nav navbar-center" data-in="fadeInDown" data-out="fadeOutUp">
+                                <li class=" scroll active"><a href="{% url 'index' %}">home</a></li>
+                                <li class="scroll"><a href="#new-arrivals">new arrival</a></li>
+                                <li class="scroll"><a href="#feature">features</a></li>
+                                <li class="scroll"><a href="#blog">blog</a></li>
+                                <li class="scroll"><a href="#newsletter">contact</a></li>
+                            
+                                {% if user.is_authenticated %}
+                                    <li class=""><a href="{% url 'logout' %}">logout</a></li>
+                                {% else %}
+                                    <li class=""><a href="{% url 'login' %}">login</a></li>
+
+                                {% endif %}	
+                            </ul>
+                            <!--/.nav -->
+                        </div><!-- /.navbar-collapse -->
+                    </div><!--/.container-->
+                </nav><!--/nav-->
+                <!-- End Navigation -->
+            </div><!--/.header-area-->
+
+   
+    {% if request.session.cart|length < 1 %}
+       <!-- Empty Cart area start -->
+      <div class="empty-cart-area pb-100px pt-100px">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="cart-heading">
+                        <h2>Your cart item</h2>
+                    </div>
+                    <div class="empty-text-contant text-center">
+                        <i class="pe-7s-shopbag"></i>
+                        <h3>There are no more items in your cart</h3>
+                        <a class="empty-cart-btn" href="shop-4-column.html">
+                            <i class="fa fa-arrow-left"> </i> Continue shopping
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Empty Cart area end -->
+{% else %}
+{% load cart_tag %}
+        <!-- Cart Area Start -->
+        <section id="new-arrivals" class="new-arrivals">
+        <div class="cart-main-area pt-100px pb-100px ">
+            <div class="container">
+                <h3 class="cart-page-title">Your cart items</h3>
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+                        <form action="#">
+                            <div class="table-content table-responsive cart-table-content">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Image</th>
+                                            <th>Product Name</th>
+                                            <th>Until Price</th>
+                                            <th>Qty</th>
+                                            <th>Subtotal</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for key,value in request.session.cart.items %}
+                                        <tr>
+                                            <td class="product-thumbnail">
+                                                <a href="#"><img class="img-responsive ml-15px" src="{{value.image}}" alt="" /></a>
+                                            </td>
+                                            <td class="product-name"><a href="">{{value.name}}</a></td>
+                                            <td class="product-price-cart"><span class="amount"> {{value.price}}</span></td>
+                                            <td class="product-quantity">
+                                                <a href="{% url 'item_increment' value.product_id %}" class='cart_quantity_up'>+</a>
+                                                    <input class="cart-plus-minus-box" type="text" name="qtybutton" value="{{value.quantity}}" />
+                                                </div>
+                                                <a href="{% url 'item_decrement' value.product_id %}" class='cart_quantity_down'>-</a>
+                                            </td>
+                                            <td class="product-subtotal"> {{ value.price|multiply:value.quantity }} </td>
+                                            <td class="product-remove">
+                                                <a href="#"><i class="fa fa-pencil"></i></a>
+                                                <a href="{% url 'item_clear' key %}"><i class="fa fa-times"></i></a>
+                                            </td>
+                                        </tr>
+                                      
+
+                                        {% endfor%} 
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="cart-shiping-update-wrapper">
+                                        <div class="cart-shiping-update">
+                                            <a href="#">Continue Shopping</a>
+                                        </div>
+                                        <div class="cart-clear">
+                                            <button>Update Shopping Cart
+                                            <a href="#"></a></button>
+                                            <button class=''><a href="{% url 'cart_clear' %}">Clear Cart</a></button>
+                                        </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-6 mb-lm-30px">
+                                <div class="cart-tax">
+                                    <div class="title-wrap">
+                                        <h4 class="cart-bottom-title section-bg-gray">Estimate Shipping And Tax</h4>
+                                    </div>
+                                    <div class="tax-wrapper">
+                                        <p>Enter your destination to get a shipping estimate.</p>
+                                        <div class="tax-select-wrapper">
+                                            <div class="tax-select">
+                                                <label>
+                                                    * Country
+                                                </label>
+                                                <select class="email s-email s-wid">
+                                                    <option>Bangladesh</option>
+                                                    <option>Albania</option>
+                                                    <option>Åland Islands</option>
+                                                    <option>Afghanistan</option>
+                                                    <option>Belgium</option>
+                                                </select>
+                                            </div>
+                                            <div class="tax-select">
+                                                <label>
+                                                    * Region / State
+                                                </label>
+                                                <select class="email s-email s-wid">
+                                                    <option>Bangladesh</option>
+                                                    <option>Albania</option>
+                                                    <option>Åland Islands</option>
+                                                    <option>Afghanistan</option>
+                                                    <option>Belgium</option>
+                                                </select>
+                                            </div>
+                                            <div class="tax-select mb-25px">
+                                                <label>
+                                                    * Zip/Postal Code
+                                                </label>
+                                                <input type="text" />
+                                            </div>
+                                            <button class="cart-btn-2" type="submit">Get A Quote</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 mb-lm-30px">
+                                <div class="discount-code-wrapper">
+                                    <div class="title-wrap">
+                                        <h4 class="cart-bottom-title section-bg-gray">Use Coupon Code</h4>
+                                    </div>
+                                    <div class="discount-code">
+                                        <p>Enter your coupon code if you have one.</p>
+                                        <form>
+                                            <input type="text" required="" name="name" />
+                                            <button class="cart-btn-2" type="submit">Apply Coupon</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-12 mt-md-30px">
+                                <div class="grand-totall">
+                                    <div class="title-wrap">
+                                        <h4 class="cart-bottom-title section-bg-gary-cart">Cart Total</h4>
+                                    </div>
+                                    <h5>Total products <span>{{cart_total_amount}}</span></h5>
+                                    <div class="total-shipping">
+                                        <h5>Total shipping</h5>
+                                        <ul>
+                                            <li>Shipping <span>20.00</span></li>
+                                            <li>GST <span>10.00</span></li>
+                                        </ul>
+                                    </div>
+                                    <h4 class="grand-totall-title">Grand Total <span>{{cart_total_amount|add:20|add:10}}</span></h4>
+                                    <a href="{% url 'checkout' %}">Proceed to Checkout</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% endif %}
+  
+        <!-- Cart Area End -->
+      		<!--footer start-->
+		<footer id="footer"  class="footer">
+			<div class="container">
+				<div class="hm-footer-copyright text-center">
+					<div class="footer-social">
+						<a href="#"><i class="fa fa-facebook"></i></a>	
+						<a href="#"><i class="fa fa-instagram"></i></a>
+						<a href="#"><i class="fa fa-linkedin"></i></a>
+						<a href="#"><i class="fa fa-pinterest"></i></a>
+						<a href="#"><i class="fa fa-behance"></i></a>	
+					</div>
+					<p>
+						&copy;copyright. designed and developed by <a href="https://www.themesine.com/">themesine</a>
+					</p><!--/p-->
+				</div><!--/.text-center-->
+			</div><!--/.container-->
+
+			<div id="scroll-Top">
+				<div class="return-to-top">
+					<i class="fa fa-angle-up " id="scroll-top" data-toggle="tooltip" data-placement="top" title="" data-original-title="Back to Top" aria-hidden="true"></i>
+				</div>
+				
+			</div><!--/.scroll-Top-->
+			
+        </footer><!--/.footer-->
+		<!--footer end-->
+      
+		<!-- Include all js compiled plugins (below), or include individual files as needed -->
+
+	
+		<script src="{% static 'web/js/jquery.js' %}"></script>
+        
+        <!--modernizr.min.js-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+		
+		<!--bootstrap.min.js-->
+        <script src="{% static 'web/js/bootstrap.min.js' %}"></script>
+		
+		<!-- bootsnav js -->
+		<script src="{% static 'web/js/bootsnav.js' %}"></script>
+
+		<!--owl.carousel.js-->
+        <script src="{% static 'web/js/owl.carousel.min.js' %}"></script>
+
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+		
+        
+        <!--Custom JS-->
+        <script src="{% static 'web/js/custom.js' %}"></script>
+      
+        </script>
+       
+        
+    </body>
+	
+</html>

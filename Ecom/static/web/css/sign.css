@@ -1,0 +1,18 @@
+.sign{
+   display: flex;
+  justify-content: center;
+  align-items: center;
+ 
+
+  
+}
+body{
+  z-index: 1;
+  background: #f8f9fd;
+}
+
+.card-title{
+  padding: 20px;
+  text-align: center;
+ 
+}
